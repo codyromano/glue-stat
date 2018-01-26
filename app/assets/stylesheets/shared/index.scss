@@ -1,0 +1,12 @@
+@import './manifest';
+@import './simple-reset';
+
+body {
+  font-family: Helvetica;
+}
+
+.page-container {
+  max-width: $app-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}

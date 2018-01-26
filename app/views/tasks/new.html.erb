@@ -1,16 +1,23 @@
-<h1>Create a Glue Stat</h1>
+<div class="page-container">
+  <h1>Create a Glue Stat</h1>
 
-<%= form_for(@task) do |f| %>
-  <p>The form contains <%= pluralize(@task.errors.count, "error") %>.</p>
-  <fieldset>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </fieldset>
+  <%= form_for(@task) do |f| %>
+    <ul class="list error-list">
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
 
-  <fieldset>
-    <%= f.label :time_completed %>
-    <%= date_field(:task, :time_completed) %>
-  </fieldset>
+    <fieldset>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </fieldset>
 
-  <%= f.submit "Create GlueStat", class: "button" %>
-<% end %>
+    <fieldset>
+      <%= f.label :time_completed %>
+      <%= date_field(:task, :time_completed) %>
+    </fieldset>
+
+    <%= f.submit "Create GlueStat", class: "button" %>
+  <% end %>
+</div>
