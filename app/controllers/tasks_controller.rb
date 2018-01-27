@@ -8,11 +8,16 @@ class TasksController < ApplicationController
     render :index
   end
 
+  def show
+    @task = Task.find(params[:id])
+    render :show
+  end
+
   def create
     @task = Task.new(task_params)
 
     if @task.save
-      render :new
+      redirect_to :action => "show", :id => @task.id
     else
       render :new
     end

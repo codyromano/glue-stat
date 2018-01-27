@@ -5,7 +5,7 @@
 
   <ul>
     <% Task.find_each do |task| %>
-      <li><%= task.title %></li>
+      <li><%= link_to task.title, action: "show", id: task.id %></li>
     <% end %>
   </ul>
 </div>
