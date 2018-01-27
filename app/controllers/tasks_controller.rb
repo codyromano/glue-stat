@@ -4,6 +4,10 @@ class TasksController < ApplicationController
     render :new
   end
 
+  def index 
+    render :index
+  end
+
   def create
     @task = Task.new(task_params)
 

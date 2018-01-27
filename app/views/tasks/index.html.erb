@@ -1,0 +1,11 @@
+<div class="page-container">
+  <h1>Manage Glue Stats</h1>
+
+  <%= link_to "Create a Glue Stat", action: "new" %>
+
+  <ul>
+    <% Task.find_each do |task| %>
+      <li><%= task.title %></li>
+    <% end %>
+  </ul>
+</div>
