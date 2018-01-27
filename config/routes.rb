@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  # get '/', to: 'application#intro'
+  root to: 'application#intro'
+
   get 'tasks/new'
   resources :tasks
 
   get 'tasks/:id'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'application#hello'
+  resources :tasks
 end
