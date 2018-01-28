@@ -1,9 +1,10 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Note: I read fixtures can be an anti-pattern, being hard to scale,
+# but I believe they're acceptable for an app of this size.
 
 one:
-  title: MyString
+  title: My Title 1
   time_completed: 2018-01-25 22:11:28
 
 two:
-  title: MyString
+  title: My Title 2
   time_completed: 2018-01-25 22:11:28

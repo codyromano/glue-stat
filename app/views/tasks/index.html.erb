@@ -1,5 +1,5 @@
 <div class="page-container">
-  <h1>Manage Glue Stats</h1>
+  <h1 class="header-index">Manage Glue Stats</h1>
 
   <%= link_to "Create a Glue Stat", action: "new" %>
 
@@ -12,7 +12,8 @@
         <div class="data-table-column">
           <p><%= link_to "Delete", task,
                          :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></p>
+                                   :method => "delete"},
+                          class: "delete-task" %></p>
         </div>
       </div>
     <% end %>
