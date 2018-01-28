@@ -13,3 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require moment
+//= require show_task.js
+//= require shared/DateTime.js
+//= require shared/TimeSinceCounter.js

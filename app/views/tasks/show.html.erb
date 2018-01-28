@@ -1,3 +1,18 @@
 <div class="page-container">
   <h1><%= @task.title %></h1>
+  <div class="counter"></div>
+  <%= link_to "Mark As Done", @task, :method => "put", class: "update-task" %>
 </div>
+
+<script type="text/template" id="params">{
+  "timeCompleted": "<%= @task.time_completed %>"
+}</script>
+
+<script>
+(function() {
+  const params = JSON.parse(document.getElementById('params').text);
+  const dateTime = new DateTime(params.timeCompleted);
+  const counter = new TimeSinceCounter(dateTime, '.counter');
+  counter.start();
+})();
+</script>

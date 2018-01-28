@@ -13,6 +13,18 @@ class TasksController < ApplicationController
     render :show
   end
 
+  def update
+    @task = Task.find(params[:id])
+    @task[:time_completed] = Time.now
+
+    if @task.save
+      redirect_to :action => "show", :id => @task.id
+    else
+      # TODO: Display error
+      render :new
+    end
+  end
+
   def destroy
     @task = Task.find(params[:id])
     if @task.destroy
