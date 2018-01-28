@@ -13,6 +13,16 @@ class TasksController < ApplicationController
     render :show
   end
 
+  def destroy
+    @task = Task.find(params[:id])
+    if @task.destroy
+      redirect_to :action => "index"
+    else
+      # TODO: Display error
+      render :new
+    end
+  end
+
   def create
     @task = Task.new(task_params)
 
@@ -26,6 +36,9 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :time_completed)
+    new_params = params.require(:task).permit(:title)
+    new_params[:time_completed] = Time.now
+
+    new_params
   end
 end

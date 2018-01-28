@@ -3,9 +3,19 @@
 
   <%= link_to "Create a Glue Stat", action: "new" %>
 
-  <ul>
+  <div class="data-table">
     <% Task.find_each do |task| %>
-      <li><%= link_to task.title, action: "show", id: task.id %></li>
+      <div class="data-table-row">
+        <div class="data-table-column">
+          <%= link_to task.title, action: "show", id: task.id %>
+        </div>
+        <div class="data-table-column">
+          <p><%= link_to "Delete", task,
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+        </div>
+      </div>
     <% end %>
-  </ul>
+  </div>
+
 </div>

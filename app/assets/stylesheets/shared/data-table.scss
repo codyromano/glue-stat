@@ -1,0 +1,19 @@
+@import './manifest';
+
+.data-table {
+  display: block;
+}
+
+.data-table-row {
+  display: flex;
+  align-items: center;
+}
+
+.data-table-row:nth-of-type(odd) {
+  background-color: rgba(200, 255, 255, 0.75);
+}
+
+.data-table-column {
+  flex: 1;
+  padding: $padding-row-bottom 0;
+}
